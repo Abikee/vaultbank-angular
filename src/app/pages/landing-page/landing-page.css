@@ -1,0 +1,178 @@
+.hero{
+    width: 95%;
+  height: 650px;
+
+  background: linear-gradient(
+    90deg,
+    #111111 0%,
+    #333333 47%,
+    #111111 100%
+  );
+  border: 1px solid black;
+  border-radius: 20px;
+  margin: 20px auto;
+  padding: 30px 40px;
+
+ display: flex;
+  flex-direction: column;
+}
+
+.hero-header{
+   display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-logo{
+    color: white;
+}
+
+.features-nav{
+  color: white;
+   display: flex;
+  gap: 40px;
+  margin-right: 6rem;
+  font-size: 15px;
+}
+
+.button-activate{
+display: flex;
+gap: 25px;
+}
+
+.button-activate button{
+  border: 1px transparent;
+  border-radius: 8px;
+  padding: 6px 18px;
+  background-color: #ffff;
+  font-size: 15px;
+  
+}
+
+.button-activate button:hover {
+  background-color: #FF5034;
+  color: white;
+}
+
+.button-activate button:active {
+  background-color: #FF5034;
+}
+
+.hero-intro{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+   
+}
+
+.hero-text{
+  color: white;
+  padding: 30px;
+  margin-top: 100px;
+}
+
+.hero-text-one{
+border: 1px solid #C8C8C831;
+border-radius: 6px;
+font-size: 11px;
+width: 40%;
+display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #FFFFFF1F;
+  padding: 4px;
+}
+
+.hero-text-two{
+  font-size: 35px;
+ font-weight: 600;
+}
+
+.hero-text-three{
+  color: #A4A4A4;
+  padding: 20px 0;
+}
+
+.business-email{
+  color: white;
+  padding: 10px 0;
+  border: 1px solid #C8C8C8;
+  border-radius: 10px;
+  background-color: #ffffff;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#email{
+  color: #636363;
+  font-size: small;
+  margin-left: 13px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.business-email-sign-up{
+  border: 1px transparent;
+  background-color: #FF5034;
+  border-radius: 8px;
+  font-size: 13px;
+  padding: 4px 7px;
+  margin-right: 7px;
+ cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.business-email-sign-up:active {
+  transform: scale(0.75)
+}
+
+.hero-image {
+  width: 50%;
+  overflow: hidden;
+}
+
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  animation: logo-flow 10s linear infinite;
+}
+
+.hi1{
+  width: 130px;
+}
+
+.hi2{
+  width: 100px;
+}
+
+.hi3{
+  width: 150px;
+}
+
+@keyframes logo-flow {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - 25px));
+  }
+} 
+
+.logo-carrier{
+  width: 615px;
+  
+}
+

@@ -1,0 +1,71 @@
+<section class="hero">
+
+    <div class="hero-header">
+    <div class="logo">
+        <img src="/vaultbank-logo.png" alt="vaultbank logo">
+        <h1 class="hero-logo">Vaultbank</h1>
+    </div>
+
+    <nav class="features-nav">
+  <a routerLink="/products">Products</a>
+  <a routerLink="/Customers">Customers</a>
+  <a routerLink="/princing">Pricing</a>
+  <a routerLink="/support">Support</a>
+</nav>
+
+<div class="button-activate">
+    <button>Login</button>
+    <button>Sign up</button>
+</div>
+    </div>
+
+<div class="hero-intro">
+    <div class="hero-text">
+    <p class="hero-text-one">100k+ Account Opened Globally</p>
+    <h1 class="hero-text-two">Bank Smarter. Save Faster. Invest Better.</h1>
+    <p class="hero-text-three">VaultBank empowers individuals and buisnesses with seamless banking, automated savings
+        and high yield investment</p>
+
+        <form class="business-email" (ngSubmit)="signUp()">
+
+    <input
+      type="email"
+      id="email"
+      [(ngModel)]="email"
+      name="email"
+      placeholder="Your Business Email"
+      required
+    />
+
+    <button 
+    class="business-email-sign-up" 
+    type="submit"
+    (click)="playClick()"
+    >
+      Sign Up
+    </button>
+
+  </form>
+
+  <div class="hero-image"> 
+    <div class="logo-track">
+    <img class="hi1" src="/pingdom-logo.png" alt="pingdom">
+    <img class="hi2" src="/ClickUp Logo.svg" alt="clickup"> 
+     <img class="hi3" src="/Monday.com-Logo.svg" alt="monday.com"> 
+
+     <img class="hi1" src="/pingdom-logo.png" alt="pingdom">
+    <img class="hi2" src="/ClickUp Logo.svg" alt="clickup">
+    <img class="hi3" src="/Monday.com-Logo.svg" alt="monday.com">
+  </div>
+  </div>
+
+  </div>
+
+        <div class="logo-carrier">
+        <img src="/Rectangle.png" alt="vaultbank">
+      </div>
+        
+</div>
+</section>
+
+
