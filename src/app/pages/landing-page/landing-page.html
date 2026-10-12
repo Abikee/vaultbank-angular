@@ -1,71 +1,84 @@
 <section class="hero">
-
-    <div class="hero-header">
+  <header class="hero-header">
     <div class="logo">
-        <img src="/vaultbank-logo.png" alt="vaultbank logo">
-        <h1 class="hero-logo">Vaultbank</h1>
+      <img src="/vaultbank-logo.png" alt="VaultBank logo" width="36" height="36">
+      <h1 class="hero-logo">Vaultbank</h1>
     </div>
 
-    <nav class="features-nav">
-  <a routerLink="/products">Products</a>
-  <a routerLink="/Customers">Customers</a>
-  <a routerLink="/princing">Pricing</a>
-  <a routerLink="/support">Support</a>
-</nav>
+    <nav class="features-nav" aria-label="Main Navigation">
+      <a routerLink="/" fragment="products">Products</a>
+      <a routerLink="/" fragment="customers">Customers</a>
+      <a routerLink="/" fragment="pricing">Pricing</a>
+      <a routerLink="/" fragment="support">Support</a>
+    </nav>
 
-<div class="button-activate">
-    <button>Login</button>
-    <button>Sign up</button>
-</div>
+    <div class="button-activate">
+      <button type="button" class="btn-login" (click)="playClick()">Login</button>
+      <button type="button" class="btn-signup-header" (click)="playClick()">Sign up</button>
     </div>
+  </header>
 
-<div class="hero-intro">
+  <div class="hero-intro">
     <div class="hero-text">
-    <p class="hero-text-one">100k+ Account Opened Globally</p>
-    <h1 class="hero-text-two">Bank Smarter. Save Faster. Invest Better.</h1>
-    <p class="hero-text-three">VaultBank empowers individuals and buisnesses with seamless banking, automated savings
-        and high yield investment</p>
+      <p class="hero-text-one">100k+ Accounts Opened Globally</p>
+      <h2 class="hero-text-two">Bank Smarter. Save Faster. Invest Better.</h2>
+      <p class="hero-text-three">VaultBank empowers individuals and businesses with seamless banking, automated savings, and high-yield investments.</p>
 
+      @if (isSignedUp()) {
+        <div class="signup-success" role="status" aria-live="polite">
+          <svg class="success-icon" viewBox="0 0 20 20" fill="currentColor" width="20" height="20" aria-hidden="true">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+          </svg>
+          <span>You're on the priority waitlist! Check your inbox soon.</span>
+        </div>
+      } @else {
         <form class="business-email" (ngSubmit)="signUp()">
+          <label for="email" class="sr-only">Your Business Email</label>
+          <input
+            type="email"
+            id="email"
+            [ngModel]="email()"
+            (ngModelChange)="email.set($event)"
+            name="email"
+            placeholder="Your Business Email"
+            required
+            autocomplete="email"
+            aria-required="true"
+          />
 
-    <input
-      type="email"
-      id="email"
-      [(ngModel)]="email"
-      name="email"
-      placeholder="Your Business Email"
-      required
-    />
+          <button 
+            class="business-email-sign-up" 
+            type="submit"
+            (click)="playClick()"
+            [disabled]="isSubmitting()"
+            aria-label="Sign up for VaultBank waitlist"
+          >
+            {{ isSubmitting() ? 'Joining...' : 'Sign Up' }}
+          </button>
+        </form>
 
-    <button 
-    class="business-email-sign-up" 
-    type="submit"
-    (click)="playClick()"
-    >
-      Sign Up
-    </button>
+        @if (errorMessage()) {
+          <p class="form-error" role="alert">{{ errorMessage() }}</p>
+        }
+      }
 
-  </form>
+      <div class="hero-image" aria-label="Trusted by industry leaders"> 
+        <div class="logo-track">
+          <img class="hi1" src="/pingdom-logo.png" alt="Pingdom logo" loading="lazy">
+          <img class="hi2" src="/ClickUp Logo.svg" alt="ClickUp logo" loading="lazy"> 
+          <img class="hi3" src="/Monday.com-Logo.svg" alt="Monday.com logo" loading="lazy"> 
 
-  <div class="hero-image"> 
-    <div class="logo-track">
-    <img class="hi1" src="/pingdom-logo.png" alt="pingdom">
-    <img class="hi2" src="/ClickUp Logo.svg" alt="clickup"> 
-     <img class="hi3" src="/Monday.com-Logo.svg" alt="monday.com"> 
-
-     <img class="hi1" src="/pingdom-logo.png" alt="pingdom">
-    <img class="hi2" src="/ClickUp Logo.svg" alt="clickup">
-    <img class="hi3" src="/Monday.com-Logo.svg" alt="monday.com">
-  </div>
-  </div>
-
-  </div>
-
-        <div class="logo-carrier">
-        <img src="/Rectangle.png" alt="vaultbank">
+          <img class="hi1" src="/pingdom-logo.png" alt="Pingdom logo" loading="lazy">
+          <img class="hi2" src="/ClickUp Logo.svg" alt="ClickUp logo" loading="lazy">
+          <img class="hi3" src="/Monday.com-Logo.svg" alt="Monday.com logo" loading="lazy">
+        </div>
       </div>
-        
-</div>
+    </div>
+
+    <div class="logo-carrier">
+      <img src="/Rectangle.png" alt="VaultBank interface overview">
+    </div>
+  </div>
 </section>
 
 
